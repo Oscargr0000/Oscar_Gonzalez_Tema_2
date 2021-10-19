@@ -39,7 +39,7 @@ public class Vehicle : MonoBehaviour
             Debug.Log($"{name} hara {Sound} cuando se ponga en marcha");
         } else
         {
-            Debug.Log($"{name} esta en marcha");
+            Debug.Log($"{name} no esta en marcha");
         }
     }
 

@@ -1268,6 +1268,7 @@ GameObject:
   - component: {fileID: 1599494805}
   - component: {fileID: 1599494804}
   - component: {fileID: 1599494803}
+  - component: {fileID: 1599494802}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -1275,6 +1276,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1599494802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599494801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d207ecfb6398745b3fcad83d5a35b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 5
+  y: 2
+  name: 
+  NumberWheels: 4
+  Sound: Nino NIno
+  isOn: 1
+  HasSiren: 0
+  Isranning: 0
+  iscold: 0
+  PlayerAge: 18
+  gasoline: 8
 --- !u!65 &1599494803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1749,7 +1773,6 @@ GameObject:
   - component: {fileID: 1958404324}
   - component: {fileID: 1958404322}
   - component: {fileID: 1958404321}
-  - component: {fileID: 1958404323}
   m_Layer: 0
   m_Name: Ambulance
   m_TagString: Untagged
@@ -1769,13 +1792,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d207ecfb6398745b3fcad83d5a35b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 3
+  x: 5
   y: 2
-  a: 5
-  b: 2
+  name: 
+  NumberWheels: 4
+  Sound: Brum, Brum
+  isOn: 1
+  HasSiren: 1
   Isranning: 0
+  iscold: 0
   PlayerAge: 18
-  HasSiren: 0
+  gasoline: 46
 --- !u!65 &1958404322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1789,23 +1816,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1958404323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958404320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707c471681598c846acb92ce648c0ca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  NumberWheels: 4
-  Sound: Brum, Brum
-  isOn: 1
-  HasSiren: 1
 --- !u!23 &1958404324
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class MyFirstScript : MonoBehaviour
     public float b = 2f;*/
 
     //Indica el nombre 
+   
     [SerializeField] private string name;
     [SerializeField] private int NumberWheels = 4;
     [SerializeField] private string Sound = "Brum, Brum";
@@ -23,19 +24,28 @@ public class MyFirstScript : MonoBehaviour
 
     public int PlayerAge = 18;
     [SerializeField] private float gasoline;
-
-
+    public string hello;
+    public int number1;
+    public int number2;
+    
     // Start is called before the first frame update
     void Start()
     {
-        /*
+        // HelloWorld();
+        //hello = GetHello();
+        //Debug.Log(GetHello());
+
+        Debug.Log(Producto(number1, number2));
+        
+
+       /*
         if (x == 2 && y <= 7)
         {
             Debug.Log($"Verdadero");
         }else
         {
             Debug.Log($"Falso");
-        }*/
+        }
 
 
 
@@ -55,7 +65,7 @@ public class MyFirstScript : MonoBehaviour
         }
 
 
-        /*
+        
         if (Isranning == true)
         {
             if (iscold == true)
@@ -81,26 +91,26 @@ public class MyFirstScript : MonoBehaviour
             }
            Debug.Log("No llueve, no lleves paraguas");
         }
-        */
+        
 
 
 
 
 
 
-        /*
+       
         Debug.Log($"Suma: {x} + {y} = {x + y}");
         Debug.Log($"Resta: {x} - {y} = {x - y}");
         Debug.Log($"Division: {x} / {y} = {x / y}");
         Debug.Log($"multiplicacion: {x} * {y} = {x * y}");
 
         Debug.Log(string.Format("Product: {0} / {1} = {2}", x, y, x / y));
-        */
+        
 
 
 
         //Indicador de posesion de sirena.
-        /*
+        
         if (HasSiren)
         {
 
@@ -127,6 +137,94 @@ public class MyFirstScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //MOVIMIENTO
+        MovementToDirection(KeyCode.D, Vector3.right);
+        MovementToDirection(KeyCode.A, Vector3.left);
+        MovementToDirection(KeyCode.W, Vector3.forward);
+        MovementToDirection(KeyCode.S, Vector3.back);
+        MovementToDirection(KeyCode.Q, Vector3.down);
+        MovementToDirection(KeyCode.Space, Vector3.up);
+
+        //ROTACION  
+        rotationdirection(KeyCode.RightArrow, new Vector3(0, 10, 0));
+        rotationdirection(KeyCode.LeftArrow, new Vector3(0, -10, 0));
+
+        //ESCALADO
+        Escalado(KeyCode.R, Vector3.right);
+       
+
+        if (isOn == true)
+        {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.position += Vector3.right;
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.position += Vector3.left;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                transform.position += Vector3.down;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                transform.position += Vector3.up;
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                transform.position += Vector3.forward;
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                transform.position += Vector3.back;
+            }
+        }
+    }
+
+    public void HelloWorld()
+    {
+        Debug.Log("Hola, Mundo");
+    }
+
+    public string GetHello()
+    {
+        return "hola";
+    }
+
+    //FUNCION DE MOVIMIENTO
+    public void MovementToDirection(KeyCode key, Vector3 Direction)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            transform.position += Direction;
+        }
+    }
+
+    //FUNCION DE ESCALADO
+    public void Escalado(KeyCode key, Vector3 Scale)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            transform.localScale += Scale;
+        }
+    }
+    //ROTATION
+    public void rotationdirection(KeyCode key, Vector3 rotation)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            transform.position += rotation;
+        }
+    }
+
+    public int Producto(int num1, int num2)
+    {
+        return num1 * num2;
     }
 }
